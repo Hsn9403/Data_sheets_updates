@@ -154,7 +154,7 @@ def verifier_effectifs(df):
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
-    try
+    try:
         file = request.files.get("file")
         if not file:
             return jsonify({"error": "No file uploaded"}), 400
