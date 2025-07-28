@@ -159,7 +159,7 @@ def analyze():
         if not file:
             return jsonify({"error": "No file uploaded"}), 400
 
-        df = pd.read_csv(file)
+        df = pd.read_csv(file,skiprows=3)
         results_df = verifier_effectifs(df)
         return results_df.to_json(orient="records"), 200
     except Exception as e:
