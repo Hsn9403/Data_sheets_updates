@@ -154,12 +154,16 @@ def verifier_effectifs(df):
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
-    try:
-        file = request.files.get("file")
-        if not file:
-            return jsonify({"error": "No file uploaded"}), 400
+    file = request.files.get("file")
+    if not file:
+        return jsonify({"error": "No file uploaded"}), 400
 
-        df = pd.read_csv(file,skiprows=3)
+    try:
+        df = pd.read_csv(file, skiprows=3)
+        required_cols = ["player_display_name", "team_slug"]
+        if not all(col in df.columns for col in required_cols):
+            return jsonify({"error": f"Missing required columns. Found: {df.columns.tolist()}"}), 400
+
         results_df = verifier_effectifs(df)
         return results_df.to_json(orient="records"), 200
     except Exception as e:
@@ -172,5 +176,3 @@ def home():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-    
-
