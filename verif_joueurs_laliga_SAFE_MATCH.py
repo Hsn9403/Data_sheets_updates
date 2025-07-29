@@ -17,6 +17,7 @@ PAUSE_AFTER = 10
 PAUSE_SECONDS = 30
 
 CLUB_SLUG_TO_ID = {
+    CLUB_SLUG_TO_ID = {
     "athletic-club-bilbao": 621,
     "atletico-madrid-madrid": 13,
     "barcelona-barcelona": 131,
@@ -28,13 +29,13 @@ CLUB_SLUG_TO_ID = {
     "girona-girona": 12321,
     "levante-valencia": 3368,
     "mallorca-palma-de-mallorca": 237,
-    "osasuna-pamplona": 331,
+    "osasuna-pamplona-irunea": 331,
     "rayo-vallecano-madrid": 367,
     "real-betis-sevilla": 150,
     "real-madrid-madrid": 418,
     "real-oviedo-oviedo": 2497,
-    "real-sociedad-san-sebastian": 681,
-    "sevilla-sevilla": 368,
+    "real-sociedad-donostia-san-sebastian": 681,
+    "sevilla-sevilla-1890": 368,
     "valencia-valencia": 1049,
     "villarreal-villarreal": 1050
 }
