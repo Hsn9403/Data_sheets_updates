@@ -4,4 +4,4 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python verif_laliga_update.py"
+    startCommand: "python verif_joueurs_laliga_SAFE_MATCH.py"
