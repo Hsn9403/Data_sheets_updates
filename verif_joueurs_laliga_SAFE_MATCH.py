@@ -10,7 +10,7 @@ from rapidfuzz import fuzz
 app = Flask(__name__)
 
 CACHE_DIR = "cache"
-API_BASE = "http://localhost:8000"
+API_BASE = "https://data-sheets-updates.onrender.com"
 MAX_CACHE_AGE_HOURS = 24
 MAX_RETRIES = 3
 PAUSE_AFTER = 10
