@@ -17,7 +17,6 @@ PAUSE_AFTER = 10
 PAUSE_SECONDS = 30
 
 CLUB_SLUG_TO_ID = {
-    CLUB_SLUG_TO_ID = {
     "athletic-club-bilbao": 621,
     "atletico-madrid-madrid": 13,
     "barcelona-barcelona": 131,
