@@ -62,7 +62,7 @@ def fetch_or_load_players(club_id, slug):
 
     for attempt in range(MAX_RETRIES):
         try:
-            url = f"{API_BASE}/clubs/{club_id}/players"
+            url = f"{API_BASE}/clubs/{club_id}/squad"
             resp = requests.get(url)
             if resp.status_code == 200:
                 data = [p["name"] for p in resp.json().get("players", [])]
