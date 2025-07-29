@@ -161,7 +161,9 @@ def analyze():
     try:
         df = pd.read_csv(file, skiprows=3)
         df.columns = df.columns.str.strip()  # nettoie les espaces invisibles
-        print("Colonnes détectées :", df.columns.tolist())
+        print("📊 Colonnes détectées :", df.columns.tolist())
+        print("🔎 Slugs disponibles dans la feuille :", df["team_slug"].unique().tolist())
+        print("🎯 Slugs attendus :", list(CLUB_SLUG_TO_ID.keys()))
         required_cols = ["player_display_name", "team_slug"]
         if not all(col in df.columns for col in required_cols):
             return jsonify({"error": f"Missing required columns. Found: {df.columns.tolist()}"}), 400
