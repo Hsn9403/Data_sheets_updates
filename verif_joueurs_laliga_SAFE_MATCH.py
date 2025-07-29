@@ -159,7 +159,7 @@ def analyze():
         return jsonify({"error": "No file uploaded"}), 400
 
     try:
-        df = pd.read_csv(file, skiprows=3)
+        df = pd.read_csv(file)
         df.columns = df.columns.str.strip()  # nettoie les espaces invisibles
         print("📊 Colonnes détectées :", df.columns.tolist())
         print("🔎 Slugs disponibles dans la feuille :", df["team_slug"].unique().tolist())
